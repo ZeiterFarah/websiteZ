@@ -1,0 +1,14 @@
+# Private working notes (plan contains privacy-search strings; never publish)
+notes/
+TODO.md
+
+# Never commit the source resume or private files
+*.docx
+*.doc
+resume*
+.env
+
+# OS / editor
+Thumbs.db
+.DS_Store
+.vscode/
