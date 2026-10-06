@@ -120,6 +120,7 @@ img { max-width: 100%; height: auto; display: block; }
 figcaption { font-size: .9rem; color: var(--color-muted); padding-top: .25rem; }
 
 /* ===== Gallery ===== */
+.gallery + p { margin-top: var(--space-2); }
 .gallery { display: grid; gap: var(--space-1); grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); list-style: none; padding: 0; margin: 0; }
 .gallery button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: var(--radius); overflow: hidden; }
 .gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; transition: opacity .15s; }
