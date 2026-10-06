@@ -5,7 +5,7 @@ Personal static site for zeiterfarah.com (plain HTML/CSS/vanilla JS, no build st
 Full spec: `notes/website-plan.md` (gitignored, read it before building). Hosting background: `notes/Website Hosting Reference.md`.
 
 ## Hard rules (summary)
-- No mention of any startup/venture the owner founded. Employer Evolve Additive Solutions may be named.
+- Personal site only: no business content beyond naming employer Evolve Additive Solutions.
 - No home address or phone anywhere; never commit the resume file; no resume download.
 - Only public contact: zeiter.farah@gmail.com (assembled in JS, no plain `mailto:` in static HTML) and linkedin.com/in/zeiterfarah. No contact form.
 - No children's names/faces/locations. No tracking or third-party analytics.

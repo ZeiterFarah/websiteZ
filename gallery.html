@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Zeiter Farah</title>
+  <meta name="description" content="A few favorite photos.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zeiter Farah">
+  <meta property="og:title" content="Gallery | Zeiter Farah">
+  <meta property="og:description" content="A few favorite photos.">
+  <meta property="og:url" content="https://zeiterfarah.com/gallery.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Gallery | Zeiter Farah">
+  <meta name="twitter:description" content="A few favorite photos.">
+  <meta name="theme-color" content="#c38225">
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-name" href="index.html">Zeiter Farah</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects/index.html">Projects</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="background.html">Background</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container section">
+      <h1>Gallery</h1>
+      <p class="lede prose">A few favorites. Select a photo to enlarge it; use the arrow keys to move between photos and Esc to close.</p>
+      <ul class="gallery">
+        <li><button type="button" data-lightbox><img src="assets/img/placeholder.svg" alt="TODO: describe gallery photo 1" width="1200" height="800" loading="lazy"></button></li>
+        <li><button type="button" data-lightbox><img src="assets/img/placeholder.svg" alt="TODO: describe gallery photo 2" width="1200" height="800" loading="lazy"></button></li>
+        <li><button type="button" data-lightbox><img src="assets/img/placeholder.svg" alt="TODO: describe gallery photo 3" width="1200" height="800" loading="lazy"></button></li>
+        <li><button type="button" data-lightbox><img src="assets/img/placeholder.svg" alt="TODO: describe gallery photo 4" width="1200" height="800" loading="lazy"></button></li>
+        <li><button type="button" data-lightbox><img src="assets/img/placeholder.svg" alt="TODO: describe gallery photo 5" width="1200" height="800" loading="lazy"></button></li>
+        <li><button type="button" data-lightbox><img src="assets/img/placeholder.svg" alt="TODO: describe gallery photo 6" width="1200" height="800" loading="lazy"></button></li>
+        <li><button type="button" data-lightbox><img src="assets/img/placeholder.svg" alt="TODO: describe gallery photo 7" width="1200" height="800" loading="lazy"></button></li>
+        <li><button type="button" data-lightbox><img src="assets/img/placeholder.svg" alt="TODO: describe gallery photo 8" width="1200" height="800" loading="lazy"></button></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Zeiter Farah</p>
+      <p><span data-email data-email-label="Email me">zeiter [dot] farah [at] gmail [dot] com</span></p>
+    </div>
+  </footer>
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <div class="lightbox-inner">
+      <img src="" alt="" width="1200" height="800">
+      <p class="lightbox-caption"></p>
+      <div class="lightbox-controls">
+        <button type="button" data-prev>Previous</button>
+        <button type="button" data-next>Next</button>
+        <button type="button" data-close>Close</button>
+      </div>
+    </div>
+  </dialog>
+  <script src="js/main.js"></script>
+</body>
+</html>
