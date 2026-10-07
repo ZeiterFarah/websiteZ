@@ -12,3 +12,7 @@ resume*
 Thumbs.db
 .DS_Store
 .vscode/
+
+# Full-size originals and story drafts (private)
+originals/*
+!originals/README.md

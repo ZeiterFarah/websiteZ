@@ -46,6 +46,12 @@ All paths are relative, so the site works from any folder or host. Pages inside 
 3. Copy one `<li class="card">` block in `projects/index.html` (and in `index.html` if it should be featured), then point it at the new page.
 4. Add the new URL to `sitemap.xml`.
 
+### Add photos and stories (originals workflow)
+
+1. Put full-size photos and a `story.md` (copy `originals/story-template.md`) in the matching topic folder under `originals/`. That folder is gitignored and never published.
+2. Make web copies with location data stripped: `python tools/process_images.py originals/<topic> assets/img/projects/<topic>` (needs `pip install pillow`; convert HEIC phone photos to JPEG first).
+3. Wire the new files into the page with real `alt` text and the printed width/height, then review and commit.
+
 ### Add gallery photos
 
 In `gallery.html`, each photo is one `<li><button type="button" data-lightbox><img ...></button></li>`. Copy one, change `src` and `alt`. For a larger version in the lightbox, add `data-full="assets/img/gallery/big.jpg"` to the `<button>`.
@@ -71,4 +77,4 @@ GitHub recommends verifying the custom domain in your account settings before ad
 
 ## Fallback: Path A (GoDaddy Web Hosting, cPanel)
 
-If you would rather stay entirely on GoDaddy, buy a GoDaddy Web Hosting (cPanel) plan and upload the site files into `public_html/` through File Manager or FTP. The same files work unchanged. Do not upload `README.md`, `CNAME`, `.nojekyll`, `CLAUDE.md`, `.git*` or `TODO.md`.
+If you would rather stay entirely on GoDaddy, buy a GoDaddy Web Hosting (cPanel) plan and upload the site files into `public_html/` through File Manager or FTP. The same files work unchanged. Do not upload `README.md`, `CNAME`, `.nojekyll`, `CLAUDE.md`, `tools/`, `originals/`, `.git*` or `TODO.md`.
