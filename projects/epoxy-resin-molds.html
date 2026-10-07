@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Epoxy resin and mold making | Zeiter Farah</title>
-  <meta name="description" content="Casting, silicone molds and finishes.">
+  <title>My First Epoxy Project: A 3D-Printed Mold for a Custom Name Coaster | Zeiter Farah</title>
+  <meta name="description" content="I designed a 3D-printed mold for a custom epoxy resin coaster with our family name on it, as a hands-on way to learn resin casting from scratch.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Zeiter Farah">
-  <meta property="og:title" content="Epoxy resin and mold making | Zeiter Farah">
-  <meta property="og:description" content="Casting, silicone molds and finishes.">
+  <meta property="og:title" content="My First Epoxy Project: A 3D-Printed Mold for a Custom Name Coaster | Zeiter Farah">
+  <meta property="og:description" content="I designed a 3D-printed mold for a custom epoxy resin coaster with our family name on it, as a hands-on way to learn resin casting from scratch.">
   <meta property="og:url" content="https://zeiterfarah.com/projects/epoxy-resin-molds.html">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Epoxy resin and mold making | Zeiter Farah">
-  <meta name="twitter:description" content="Casting, silicone molds and finishes.">
+  <meta name="twitter:title" content="My First Epoxy Project: A 3D-Printed Mold for a Custom Name Coaster | Zeiter Farah">
+  <meta name="twitter:description" content="I designed a 3D-printed mold for a custom epoxy resin coaster with our family name on it, as a hands-on way to learn resin casting from scratch.">
   <meta name="theme-color" content="#c38225">
   <link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/styles.css">
@@ -39,22 +39,152 @@
   <main id="main">
     <article class="container section">
       <p><a href="index.html">&larr; All projects</a></p>
-      <h1>Epoxy resin and mold making</h1>
-      <p class="lede prose">Casting, silicone molds and finishes.</p>
-      <img class="project-hero" src="../assets/img/placeholder.svg" alt="TODO: hero photo for Epoxy resin and mold making" width="1200" height="800">
-      <div class="prose">
+      <h1>My First Epoxy Project: A 3D-Printed Mold for a Custom Name Coaster</h1>
+      <p class="lede prose">I designed a 3D-printed mold for a custom epoxy resin coaster with our family name on it, as a hands-on way to learn resin casting from scratch.</p>
+      <figure class="project-hero">
+        <img src="../assets/img/placeholder.svg" alt="TODO placeholder: finished coaster" width="1200" height="800" loading="lazy">
+        <figcaption>The finished coaster.</figcaption>
+      </figure>
+
+      <div class="prose story">
         <h2>Why I started this</h2>
-        <p class="todo">TODO: write-up from the owner.</p>
+        <p>I wanted to learn epoxy resin properly: mixing ratios, bubbles, demolding, finishing. I already had an FDM printer and could design my own molds, so I looked for a first project that would teach all the basics without being overwhelming.</p>
+        <p>A coaster fit. It's small, flat, and cheap to get wrong, but it still covers mold design, mixing by weight, bubble control, cure and demold timing, and sanding and polishing. I wanted our last name, <strong>Farah</strong>, on it, which turned the project into a design problem as well as a pouring one.</p>
+        <p>The first decision was how to do the text:</p>
+        <ul>
+          <li><strong>Embossed (raised):</strong> bubbles hide in the bottom of small letter pockets in the mold, so it's the hardest to pour cleanly.</li>
+          <li><strong>Debossed (recessed):</strong> simpler geometry, but thin raised letters on the mold can snap off at demold.</li>
+          <li><strong>Debossed with a color inlay:</strong> pour the base coaster, flip it, fill the recessed letters with a second color, and sand flush.</li>
+        </ul>
+        <p>I chose the inlay. It adds a second pour, color planning, and precision sanding, which is more learning for the same project.</p>
+        <p>The second decision was the mold type. A <strong>direct-print PETG mold</strong> is the simplest. A <strong>silicone mold cast from a printed master</strong> hides FDM layer lines but adds about $30-40 and an extra day. I started with the direct-print mold and saved the silicone route for round two.</p>
+
         <h2>How it's made</h2>
-        <p class="todo">TODO: materials, tools and process.</p>
-        <h2>What I learned</h2>
-        <p class="todo">TODO: write-up from the owner.</p>
+        <h3>Designing the mold</h3>
+        <p>I built the mold in OpenSCAD so every dimension is a parameter I can change:</p>
+        <ul>
+          <li>95 mm round coaster, 8 mm thick</li>
+          <li>a slight draft on the cavity wall (about 0.35 mm per side) so the part releases</li>
+          <li>the name as <strong>raised text on the cavity floor</strong>, which leaves recessed letters in the coaster</li>
+          <li>a small pour/overflow spout notch in the rim</li>
+        </ul>
       </div>
-      <h2>Photos</h2>
-      <div class="photo-set">
-        <figure><img src="../assets/img/placeholder.svg" alt="TODO: project photo 1" width="1200" height="800" loading="lazy"><figcaption>TODO: caption</figcaption></figure>
-        <figure><img src="../assets/img/placeholder.svg" alt="TODO: project photo 2" width="1200" height="800" loading="lazy"><figcaption>TODO: caption</figcaption></figure>
-        <figure><img src="../assets/img/placeholder.svg" alt="TODO: project photo 3" width="1200" height="800" loading="lazy"><figcaption>TODO: caption</figcaption></figure>
+      <figure class="story-figure">
+        <img src="../assets/img/placeholder.svg" alt="TODO placeholder: Computer render of a square mold block with a round recess; mirrored raised letters spelling FARAH stand on the recess floor, and a small notch cuts through the rim on the right side." width="1200" height="800" loading="lazy">
+        <figcaption>The mold as designed in OpenSCAD, with the name mirrored on the cavity floor and the spout notch on the right.</figcaption>
+      </figure>
+
+      <figure class="story-figure">
+        <img src="../assets/img/placeholder.svg" alt="TODO placeholder: Computer render of a flat round disc with the word FARAH cut into its top surface as recessed letters." width="1200" height="800" loading="lazy">
+        <figcaption>A render of the intended coaster, with the name recessed into the face.</figcaption>
+      </figure>
+
+      <div class="prose story">
+        <p>The design went through four corrections.</p>
+        <p><strong>1. Mirrored text.</strong> You cast with the good face down because the mold floor gives the crispest, smoothest surface. After demolding, you flip the coaster to display that face. So the text on the mold floor has to be mirrored, or the name reads backwards on the finished piece. I added a <code>mirror_text_for_flip</code> parameter, on by default.</p>
+        <p><strong>2. The spout needed supports.</strong> The spout does three jobs: it gives extra resin one predictable place to leave instead of cresting over the whole rim, it shows you when resin reaches the fill line, and it lets bubbles at the edge escape. My first version cut the notch 0.9 mm short of the top surface, which left a thin unsupported roof over it. That meant supports or ugly bridging for no benefit. I spotted it looking at the model. The fix was to cut the notch open through the top, so nothing hangs over it.</p>
+        <p><strong>3. The spout wasn't lower than the rim.</strong> After that fix I still said the spout looked the same height as the rim, and that it had to sit lower or resin wouldn't prefer it. A perspective render hid the problem, so I checked the actual mesh. The spout region topped out at the full rim height. The cause was a single line: I had positioned the cut with <code>cube(..., center=[true,true,false])</code>, which should center it left-right and anchor its floor in Z. The OpenSCAD version I'm running (2021.01) doesn't support that vector form. It silently falls back to no centering on any axis, so the cut landed off to one side, partly outside the cavity. The fix was to drop <code>center=</code> and place the cut by explicit corner coordinates, then verify it against the exported mesh: the spout floor sat below the full rim, and no material was left between the cavity and the outer wall in the spout's height band.</p>
+        <p><strong>4. The volume estimate.</strong> My first resin estimate (about 45 mL) came from a rough shortcut. Computing the real frustum volume gave <strong>about 57 mL</strong>, minus a negligible amount for the text recess. That's a 20% difference, enough to run short mid-pour.</p>
+      </div>
+      <figure class="story-figure">
+        <img src="../assets/img/placeholder.svg" alt="TODO placeholder: printed PETG mold" width="1200" height="800" loading="lazy">
+        <figcaption>The printed PETG mold, with the spout notch in the rim.</figcaption>
+      </figure>
+
+      <div class="prose story">
+        <h3>What I bought</h3>
+      </div>
+      <div class="table-wrap story">
+        <table>
+          <thead><tr><th scope="col">Item</th><th scope="col">Details</th><th scope="col">Why</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Puduo Epoxy Resin Kit</th><td>72 oz, crystal-clear casting resin, 1:1</td><td>Casting formula suits an 8 mm pour. The kit has far more than I need for a coaster, which leaves room to practice.</td></tr>
+            <tr><th scope="row">CHANGTIKEJI Mica Powder</th><td>24 colors, 10 g bottles</td><td>Base color plus a contrasting inlay color.</td></tr>
+            <tr><th scope="row">SWIGRANCE Silicone Mixing Cups</th><td>600 ml, 250 ml and 3 x 100 ml, with stir sticks</td><td>Cured epoxy peels out of silicone, so the cups are reusable.</td></tr>
+            <tr><th scope="row">Mold release spray</th><td><span class="todo-inline">TODO: brand</span></td><td>Helps the cured epoxy release from the printed PETG.</td></tr>
+            <tr><th scope="row">PETG filament</th><td><span class="todo-inline">TODO: brand, if bought</span></td><td>Handles the resin's cure heat better than PLA.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="prose story">
+        <p>Already on hand: a precision scale (120 g max, 0.001 g resolution), a food scale, nitrile gloves, painter's tape, wet/dry sandpaper (220-2000 grit), and a butane torch. I skipped a vacuum degassing chamber. It's nice to have, but the torch is enough to learn the basics.</p>
+      </div>
+      <figure class="story-figure">
+        <img src="../assets/img/placeholder.svg" alt="TODO placeholder: supplies laid out" width="1200" height="800" loading="lazy">
+        <figcaption>Supplies: resin kit, mica powder, silicone cups, release spray.</figcaption>
+      </figure>
+
+      <div class="prose story">
+        <h3>How much resin</h3>
+        <ul>
+          <li>Cavity volume is about 57 mL, plus roughly 10% for resin left on the cup and stir stick, so about 62 mL.</li>
+          <li>At roughly 1.1 g/mL for mixed casting epoxy, that's about 69 g total.</li>
+          <li>I rounded to <strong>35 g Part A + 35 g Part B</strong>, assuming a 1:1 ratio by weight, and confirmed the ratio on the bottle rather than trusting that assumption.</li>
+        </ul>
+        <p>I used the <strong>precision scale</strong>. The ratio error that matters is relative. A food scale's 1 g steps are fine for a 70 g batch, but on the tiny inlay batch (a few grams) they could mean a 15-20% ratio error and a tacky cure. The 120 g limit is fine for a 70 g pour.</p>
+      </div>
+      <figure class="story-figure">
+        <img src="../assets/img/placeholder.svg" alt="TODO placeholder: weighing resin on a scale" width="1200" height="800" loading="lazy">
+        <figcaption>Weighing Part A and Part B on the precision scale.</figcaption>
+      </figure>
+
+      <div class="prose story">
+        <h3>The lab notebook</h3>
+        <p>I built an Excel workbook with three tabs:</p>
+        <ul>
+          <li><strong>Procedure:</strong> 21 checkable steps from setup through polish, with time estimates and a notes column.</li>
+          <li><strong>Experiment Log:</strong> one row per batch. Hardener weight and total mix weight calculate from the resin weight and ratio, there are dropdowns for yes/no and 1-5 ratings, and an average-rating cell shows whether pours are improving.</li>
+          <li><strong>Reference &amp; Troubleshooting:</strong> the mold specs, a typical cure timeline, and a symptom, cause and fix table.</li>
+        </ul>
+        <p>The sheet had its own bug. My example row's data landed in the wrong columns and one value was overwritten by a formula, because I had mapped columns by guessed letters. I rebuilt it keyed by header names and checked that every column lined up.</p>
+      </div>
+      <figure class="story-figure">
+        <img src="../assets/img/placeholder.svg" alt="TODO placeholder: spreadsheet screenshot" width="1200" height="800" loading="lazy">
+        <figcaption>The Experiment Log tab of the spreadsheet.</figcaption>
+      </figure>
+
+      <div class="prose story">
+        <h3>The pour</h3>
+        <ol>
+          <li>Clean the mold with isopropyl alcohol and apply a <strong>thin</strong> coat of release. Let it sit 1-2 minutes.</li>
+          <li>Level the mold.</li>
+          <li>Weigh Part A, then Part B, into a silicone cup. Record the <strong>actual</strong> weights.</li>
+          <li>Add a small amount of mica and mix slowly for the full time on the bottle, scraping the sides and bottom.</li>
+          <li>Pour in a thin stream. Pass the torch quickly over the surface every 5-10 minutes for the first half hour.</li>
+          <li>Cure undisturbed, covered from dust.</li>
+          <li>Demold, then flip the coaster so the recessed letters face up.</li>
+          <li>Mix a few grams of a contrasting color and fill the letters, slightly overfilled.</li>
+          <li>After the inlay cures, wet-sand 220, 400, 600, 1000, then 2000 grit until it's flush, then polish.</li>
+        </ol>
+      </div>
+      <div class="photo-set story">
+        <figure><img src="../assets/img/placeholder.svg" alt="TODO placeholder: pouring into the mold" width="1200" height="800" loading="lazy"><figcaption>Pouring into the mold.</figcaption></figure>
+        <figure><img src="../assets/img/placeholder.svg" alt="TODO placeholder: torch pass over the surface" width="1200" height="800" loading="lazy"><figcaption>Torch pass to pop surface bubbles.</figcaption></figure>
+        <figure><img src="../assets/img/placeholder.svg" alt="TODO placeholder: coaster after demolding" width="1200" height="800" loading="lazy"><figcaption>The coaster after demolding, letters recessed.</figcaption></figure>
+        <figure><img src="../assets/img/placeholder.svg" alt="TODO placeholder: filling the letters with contrasting color" width="1200" height="800" loading="lazy"><figcaption>Filling the letters with the contrasting color.</figcaption></figure>
+        <figure><img src="../assets/img/placeholder.svg" alt="TODO placeholder: wet-sanding the inlay" width="1200" height="800" loading="lazy"><figcaption>Wet-sanding the inlay flush.</figcaption></figure>
+      </div>
+      <div class="prose story">
+        <h3>Cleanup</h3>
+        <p>Do <strong>not</strong> pour liquid resin down the drain. It hardens in the trap.</p>
+        <ul>
+          <li><strong>Easiest:</strong> leave the leftover resin in the silicone cup until it fully cures, then flex the cup and pop the puck out. No solvent needed.</li>
+          <li><strong>If you need the cup sooner:</strong> wipe it out with a paper towel while the resin is still liquid, then wipe with isopropyl alcohol. Once resin cures it's solvent-resistant, so clean early.</li>
+          <li><strong>Stir sticks:</strong> let them cure and toss them.</li>
+          <li><strong>Paper towels:</strong> lay used towels flat to finish curing. A tight wad soaked in curing resin can generate real heat.</li>
+        </ul>
+
+        <h2>What I learned</h2>
+        <p class="todo">TODO: how the pour turned out: bubbles, demold difficulty, text detail, inlay quality, final thickness, what I'd change.</p>
+        <p>My takeaways:</p>
+        <ol>
+          <li>Mix by weight, and record real weights, not targets.</li>
+          <li>Mirror text on any face you'll flip.</li>
+          <li>Check geometry numerically. Renders can hide mistakes. I could have caught both spout problems earlier by measuring instead of trusting a picture.</li>
+          <li>Release spray goes on thin.</li>
+          <li>Clean and wipe while resin is liquid. Once it cures, you wait.</li>
+        </ol>
+        <p>Next up: a silicone mold cast from a sanded printed master, which should hide the FDM layer lines and give me a reusable mold.</p>
       </div>
     </article>
   </main>

@@ -146,3 +146,18 @@ figcaption { font-size: .9rem; color: var(--color-muted); padding-top: .25rem; }
 .contact-list { list-style: none; padding: 0; font-size: 1.15rem; }
 .contact-list li { margin-bottom: var(--space-1); }
 .contact-list .label { display: inline-block; min-width: 6rem; color: var(--color-muted); }
+
+/* ===== Project story ===== */
+.story-figure { margin: var(--space-3) 0; max-width: var(--measure); }
+.story-figure img { border-radius: var(--radius); width: 100%; }
+.story code { font-size: .9em; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 4px; padding: .05em .35em; overflow-wrap: anywhere; }
+.story ol, .story ul { padding-left: 1.4rem; }
+.story li { margin-bottom: .4rem; }
+.table-wrap { overflow-x: auto; max-width: 52rem; margin-bottom: var(--space-2); }
+.table-wrap table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+.table-wrap th, .table-wrap td { text-align: left; vertical-align: top; padding: .6rem .75rem; border-bottom: 1px solid var(--color-border); }
+.table-wrap thead th { border-bottom: 2px solid var(--color-accent); }
+.todo-inline { color: var(--color-muted); border: 1px dashed var(--color-border); border-radius: 4px; padding: 0 .35em; }
+figure.project-hero { margin-inline: 0; }
+figure.project-hero img { border-radius: var(--radius); width: 100%; }
+figure.project-hero { max-width: 48rem; }
