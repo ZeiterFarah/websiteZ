@@ -3,6 +3,7 @@
 Usage (from the repo root):
     python tools/process_images.py originals/epoxy-resin-molds assets/img/projects/epoxy-resin-molds
     python tools/process_images.py originals/gallery assets/img/gallery --max 1200
+    python tools/process_images.py originals/<topic> <dest> --blur 5   # make text unreadable
 
 Needs Pillow:  pip install pillow
 Outputs 01-name.jpg style files and prints width x height for the HTML.
@@ -13,7 +14,7 @@ import re
 import sys
 from pathlib import Path
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageFilter, ImageOps
 
 EXTS = {".jpg", ".jpeg", ".png", ".webp"}
 
@@ -27,6 +28,7 @@ def main():
     ap.add_argument("src")
     ap.add_argument("dest")
     ap.add_argument("--max", type=int, default=1600, help="max long edge in px (default 1600)")
+    ap.add_argument("--blur", type=float, default=0, help="Gaussian blur radius in px, applied after resizing (e.g. 5 to hide text)")
     ap.add_argument("--quality", type=int, default=82)
     args = ap.parse_args()
 
@@ -42,6 +44,8 @@ def main():
             im.thumbnail((args.max, args.max))
             clean = Image.new("RGB", im.size)  # fresh image: carries no EXIF/GPS/ICC data
             clean.paste(im.convert("RGB"))
+            if args.blur:
+                clean = clean.filter(ImageFilter.GaussianBlur(args.blur))
             out = dest / f"{i:02d}-{slug(p.stem)}.jpg"
             clean.save(out, "JPEG", quality=args.quality, optimize=True, progressive=True)
             print(f"{out}  width={clean.width} height={clean.height}")

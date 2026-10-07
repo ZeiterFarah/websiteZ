@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Family dinner planner | Zeiter Farah</title>
-  <meta name="description" content="A software project for planning family meals.">
+  <title>Home Base | Zeiter Farah</title>
+  <meta name="description" content="A dinner-planning tool I built for my family turned into the touchscreen on our kitchen wall that everyone checks, and it changed direction three times on the way.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Zeiter Farah">
-  <meta property="og:title" content="Family dinner planner | Zeiter Farah">
-  <meta property="og:description" content="A software project for planning family meals.">
+  <meta property="og:title" content="Home Base | Zeiter Farah">
+  <meta property="og:description" content="A dinner-planning tool I built for my family turned into the touchscreen on our kitchen wall that everyone checks, and it changed direction three times on the way.">
   <meta property="og:url" content="https://zeiterfarah.com/projects/family-dinner-planner.html">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Family dinner planner | Zeiter Farah">
-  <meta name="twitter:description" content="A software project for planning family meals.">
+  <meta name="twitter:title" content="Home Base | Zeiter Farah">
+  <meta name="twitter:description" content="A dinner-planning tool I built for my family turned into the touchscreen on our kitchen wall that everyone checks, and it changed direction three times on the way.">
   <meta name="theme-color" content="#c38225">
   <link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/styles.css">
@@ -39,29 +39,55 @@
   <main id="main">
     <article class="container section">
       <p><a href="index.html">&larr; All projects</a></p>
-      <h1>Family dinner planner</h1>
-      <p class="lede prose">A software project for planning family meals.</p>
-      <img class="project-hero" src="../assets/img/placeholder.svg" alt="TODO: hero photo for Family dinner planner" width="1200" height="800">
-      <div class="prose">
+      <h1>Home Base</h1>
+      <p class="lede prose">A dinner-planning tool I built for my family turned into the touchscreen on our kitchen wall that everyone checks, and it changed direction three times on the way.</p>
+      <figure class="project-hero">
+        <img src="../assets/img/projects/family-dinner-planner/week-view.jpg" alt="Blurred screenshot of a touchscreen week view: weather and today's agenda at top left, seven days of dinners with thumbs-up buttons in the middle, colour-coded morning routine checklists on the right, and homework, chores and a grocery list along the bottom." width="1400" height="775" loading="lazy">
+        <figcaption>The week at a glance on the kitchen screen: dinners and school lunch, today's agenda, morning routines, homework, chores and a shared list. Screenshots use demo data and are blurred.</figcaption>
+      </figure>
+
+      <div class="prose story">
         <h2>Why I started this</h2>
-        <p class="todo">TODO: write-up from the owner.</p>
+        <p>Dinner was the thing that wore us down. Every week it was the same loop: figure out what's in the house, guess which nights would be too busy to cook, and then scramble. So I set out to build a small app to plan the week in one sitting on Sunday. My first plan had a list of meals, a pantry list, tags for busy nights and long-cook nights, a loose field for cost, and a grocery list I could send to our delivery app. I wrote the whole plan up so I could show it to my wife before building anything.</p>
+        <p>It didn't stay that app. After the first demo, her feedback changed what mattered, and then living with it changed it again.</p>
+
         <h2>How it's made</h2>
-        <p class="todo">TODO: materials, tools and process.</p>
-        <h2>What I learned</h2>
-        <p class="todo">TODO: write-up from the owner.</p>
+        <p><strong>What it runs on.</strong> A small web app on the Ubuntu server I already run at home, in Docker, with the data backed up to a NAS. The kitchen screen is an ordinary touchscreen PC showing a web page, with the family calendar open in a second browser tab. Nothing about our family lives in someone else's cloud. A few features do call out by design: the weather, the school's published lunch menu, our calendar link, and a package-tracking service.</p>
+        <p><strong>How it got built.</strong> I planned it in conversation with Claude, turned the plan into a list of milestones, and had a coding agent build it one milestone at a time.</p>
+        <p><strong>The path it took:</strong></p>
+        <ol>
+          <li><strong>The dinner planner.</strong> The first version was the Sunday ritual: tag each day (busy, normal, long cook, eating out, leftovers), look at suggested dinners, swap what you don't like, and lock the week. It ranks suggestions by what we haven't eaten lately and what the kids liked, and the kids tap a thumbs-up on dinners they enjoyed so those come back more often. The whole Sunday session takes about ten to fifteen minutes.</li>
+          <li><strong>Pivot one: the kitchen display.</strong> After the first demo, my wife's feedback changed what I focused on. I set the grocery list aside and made two things the headline: a shared screen for the kitchen, and school lunch menus pulled in automatically from the district's published menu, so each night's dinner sits next to that day's lunch. Two choices from that stage stuck. The kids tap their thumbs-up right on the shared screen with no "who are you" step, and the screen's only "kiosk mode" is a small fullscreen button, so the kitchen PC stays a normal computer.</li>
+          <li><strong>Pivot two: from a menu to the whole day.</strong> Once the screen was on the wall, the family started asking for things, and each feature exists because someone in the house wanted it. Each child got their own colour and their own morning and evening routines. Our five-year-old can't read yet, so her routine is big picture tiles she taps herself. Homework shows the most urgent item with a "Due today" or "Due tomorrow" nudge, and a child taps the box when they've handed it in. Then came repeating chores, shared lists anyone can tick off, our existing family calendar (read-only, so the display never changes it), and package tracking in plain words like "Out for delivery." There's a Day view with a lane per child, a Week view, and a Month view, and when nobody has touched it for a few minutes it turns into a photo slideshow.</li>
+        </ol>
       </div>
-      <h2>Tech stack</h2>
-      <p class="todo">TODO: tech stack.</p>
-      <h2>Screenshot</h2>
-      <img class="project-hero" src="../assets/img/placeholder.svg" alt="TODO: screenshot using demo data only (fake names, no real routines or photos)" width="1200" height="800" loading="lazy">
-      <p class="muted">Screenshots use demo data only.</p>
-      <h2>Links</h2>
-      <p class="todo">TODO: repo or demo link, if any.</p>
-      <h2>Photos</h2>
-      <div class="photo-set">
-        <figure><img src="../assets/img/placeholder.svg" alt="TODO: project photo 1" width="1200" height="800" loading="lazy"><figcaption>TODO: caption</figcaption></figure>
-        <figure><img src="../assets/img/placeholder.svg" alt="TODO: project photo 2" width="1200" height="800" loading="lazy"><figcaption>TODO: caption</figcaption></figure>
-        <figure><img src="../assets/img/placeholder.svg" alt="TODO: project photo 3" width="1200" height="800" loading="lazy"><figcaption>TODO: caption</figcaption></figure>
+      <figure class="story-figure">
+        <img src="../assets/img/projects/family-dinner-planner/day-view.jpg" alt="Blurred screenshot of a touchscreen day view: three colour-coded columns, one per child, each with a morning routine, activities and homework, and a green column on the right for school lunch and dinner." width="1400" height="779" loading="lazy">
+        <figcaption>Day view: a lane for each child with routines, activities and homework, plus tonight's dinner and school lunch.</figcaption>
+      </figure>
+
+      <figure class="story-figure">
+        <img src="../assets/img/projects/family-dinner-planner/month-view.jpg" alt="Blurred screenshot of a month calendar grid with a meal name at the top of each day and colour-coded event bars for each child's activities." width="1400" height="789" loading="lazy">
+        <figcaption>Month view: dinners and every child's activities on one calendar, each in that child's colour.</figcaption>
+      </figure>
+
+      <div class="prose story">
+        <ol start="4">
+          <li><strong>A side road I didn't take.</strong> I wanted a bus icon the kids could tap to see where the school bus is. The bus company has no public API, so I wrote it up as a separate experiment and kept it out of the app.</li>
+          <li><strong>Pivot three: the name.</strong> "Family Dinner Planner" stopped being accurate, so it's Home Base now.</li>
+        </ol>
+        <p><strong>Where it ended up.</strong> Version 1.1.0, in daily use in our house of five. There's no subscription for the app itself (the package-tracking service has its own free tier). It's still a working prototype from one family. It needs a small always-on computer at home, the school-lunch import is built around our own district's menu, and it isn't something to download yet.</p>
+        <p class="muted">Screenshots show demo data only, with the children's names replaced, and are blurred.</p>
+
+        <h2>What I learned</h2>
+        <ul>
+          <li><strong>Show it early.</strong> One conversation with my wife changed the product more than anything I'd planned alone. The grocery list I'd put at the centre of my plan got set aside, and a shared screen for the kitchen took over.</li>
+          <li><strong>Let the people in the house ask for things.</strong> The best features all started as someone saying "can it also show..." after a week of using it.</li>
+          <li><strong>Design for the person with the least patience.</strong> A five-year-old with picture tiles, no logins, big touch targets and one fixed layout made it easier for the adults too. If something doesn't fit on a screen you can read from across the kitchen, it doesn't go on the screen.</li>
+          <li><strong>Suggestions beat rules.</strong> Dinner suggestions only work if you can ignore them, so any meal can be picked anyway.</li>
+          <li><strong>Not everything needs building.</strong> Live bus tracking and automatic grocery ordering both ran into services that don't offer what I'd need, and the app is better for the things I left out.</li>
+          <li><strong>Specific beats general, for now.</strong> Parts of it are tied to our school's menu and our class's homework document. Making it work for other families would take real work, so I'm asking relatives whether they'd want it before I decide.</li>
+        </ul>
       </div>
     </article>
   </main>
