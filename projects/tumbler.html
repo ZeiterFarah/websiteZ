@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tumbler project | Zeiter Farah</title>
-  <meta name="description" content="TODO: one-sentence summary.">
+  <title>The Jar Roller: From an Ice-Cream Lid to a Parametric Build | Zeiter Farah</title>
+  <meta name="description" content="I replaced a wood-and-coupling contraption that spun a jar but never really mixed anything with a fully parametric, 3D-printed horizontal roller mill, redesigning it twice more after the bench told me my CAD was wrong.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Zeiter Farah">
-  <meta property="og:title" content="Tumbler project | Zeiter Farah">
-  <meta property="og:description" content="TODO: one-sentence summary.">
+  <meta property="og:title" content="The Jar Roller: From an Ice-Cream Lid to a Parametric Build | Zeiter Farah">
+  <meta property="og:description" content="I replaced a wood-and-coupling contraption that spun a jar but never really mixed anything with a fully parametric, 3D-printed horizontal roller mill, redesigning it twice more after the bench told me my CAD was wrong.">
   <meta property="og:url" content="https://zeiterfarah.com/projects/tumbler.html">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Tumbler project | Zeiter Farah">
-  <meta name="twitter:description" content="TODO: one-sentence summary.">
+  <meta name="twitter:title" content="The Jar Roller: From an Ice-Cream Lid to a Parametric Build | Zeiter Farah">
+  <meta name="twitter:description" content="I replaced a wood-and-coupling contraption that spun a jar but never really mixed anything with a fully parametric, 3D-printed horizontal roller mill, redesigning it twice more after the bench told me my CAD was wrong.">
   <meta name="theme-color" content="#c38225">
   <link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/styles.css">
@@ -39,23 +39,100 @@
   <main id="main">
     <article class="container section">
       <p><a href="index.html">&larr; All projects</a></p>
-      <h1>Tumbler project</h1>
-      <p class="lede prose">TODO: one-sentence summary.</p>
-      <img class="project-hero" src="../assets/img/placeholder.svg" alt="TODO: hero photo for Tumbler project" width="1200" height="800">
-      <div class="prose">
+      <h1>The Jar Roller: From an Ice-Cream Lid to a Parametric Build</h1>
+      <p class="lede prose">I replaced a wood-and-coupling contraption that spun a jar but never really mixed anything with a fully parametric, 3D-printed horizontal roller mill, redesigning it twice more after the bench told me my CAD was wrong.</p>
+      <figure class="project-hero">
+        <img src="../assets/img/placeholder.svg" alt="TODO placeholder: full assembly render" width="1200" height="800" loading="lazy">
+        <figcaption>Full assembly, rendered in use orientation with a translucent jar resting on the two rollers.</figcaption>
+      </figure>
+
+      <div class="prose story">
         <h2>Why I started this</h2>
-        <p class="todo">TODO: write-up from the owner.</p>
+        <p>My first version was honest improvisation. A 100 RPM 12V gearmotor, a PWM speed controller, a flange coupling, and a hole drilled straight through an ice-cream container lid. I'd bolt the coupling to the lid, drop a vial wrapped in bubble wrap into the container, snap the lid on, and let it spin. A wood frame held the motor up high enough for the container to clear the table, and an old PC power supply ran the whole thing. It worked, in the sense that the motor turned and the jar turned with it. Total cost: about $120, against $400&ndash;700 for a commercial unit.</p>
+        <p>What I didn't appreciate until I started designing the replacement is that it wasn't really mixing. That setup spun the jar around a <em>vertical</em> axis, like a potter's wheel. In the jar's own frame of reference, gravity doesn't sweep through the material when you do that &mdash; it stays pointed the same way relative to the container the whole time, so nothing tumbles. You get centrifugal effects and whatever vibration the imbalance happens to produce, but not the fold-over-fold-over motion that actually blends powder. A proper jar roller spins the jar about a <em>horizontal</em> axis instead, so gravity constantly reverses through the material as it rotates &mdash; that's the whole mechanism, and I'd built a machine that structurally couldn't do it.</p>
+        <p>Once I had a 3D printer, I had no excuse not to fix that properly: design an actual horizontal twin-roller mill, parametric enough that I could change jar sizes, roller grip, or motor hardware without starting over, and durable enough to replace the ice-cream lid for good.</p>
+
         <h2>How it's made</h2>
-        <p class="todo">TODO: materials, tools and process.</p>
+        <h3>Design</h3>
+        <p>The whole thing is one parametric OpenSCAD file. Every dimension that matters &mdash; roller spacing, shaft diameter, bearing size, motor bolt pattern, O-ring groove depth &mdash; is a named parameter at the top of the file, with the real geometry derived from it and self-checked with <code>echo()</code> output at render time (bolt-circle math, contact angle, resulting jar RPM as a percentage of critical speed, insert hole clearances, etc.). That let me catch dimensional mistakes by reading a number in the console instead of finding them with a hex key at the bench.</p>
+        <h3>Drivetrain</h3>
+        <p>A 12V DC gearmotor (100 RPM, 6mm D-shaft) with a PWM speed controller, driving one roller through a flange coupling. The second roller is a free-spinning idler. The jar rests across both, driven purely by friction, with the contact angle and jar-axis height worked out trigonometrically from the roller spacing and jar diameter so jars from ~55mm up to ~130mm all seat correctly.</p>
+        <h3>Structure</h3>
+        <p>The base is a 2mm-skin printed plate stiffened with internal ribs rather than a solid slab &mdash; strong enough to hold everything rigid, light enough to print quickly. Every component (pillow blocks, motor mount, electronics tray) drops into a shallow recessed pocket in the base rather than locating against a raised fence, specifically so the base can print face-down without support material in the pockets.</p>
+      </div>
+      <figure class="story-figure">
+        <img src="../assets/img/placeholder.svg" alt="TODO placeholder: underside of the motor-side base tile" width="1200" height="800" loading="lazy">
+        <figcaption>Underside of the motor-side base tile, showing the recessed electronics pocket and the three butt-joint bolt holes that mate it to the roller tile.</figcaption>
+      </figure>
+
+      <figure class="story-figure">
+        <img src="../assets/img/placeholder.svg" alt="TODO placeholder: recessed pillow block pockets in the base" width="1200" height="800" loading="lazy">
+        <figcaption>Recessed pockets for the pillow blocks, showing the slot cutouts and bolt holes that let them seat flush instead of locating against a raised fence.</figcaption>
+      </figure>
+
+      <div class="prose story">
+        <h3>Rotating parts</h3>
+        <p>Two 8mm steel shafts, each riding in a pair of 608 bearings pressed into printed pillow blocks, carry the printed roller cores. Each roller has three shallow grooves holding a loop of 1/8&quot; (3.175mm) Buna-N cord as the grip surface &mdash; sized to match the gasket cord on my vacuum chuck, so one spool of cord stock serves both machines.</p>
+        <h3>Motor mounting</h3>
+        <p>After testing, I ditched my own custom motor faceplate design in favor of the OEM L-bracket that shipped with the gearmotor kit &mdash; it just worked better in practice than anything I'd drawn. I designed a riser/adapter plate instead, matched to the bracket's measured 40&times;40mm foot and 30&times;24mm hole spacing, that bolts into the same base pocket and brings the motor shaft up to the roller-shaft centerline.</p>
+      </div>
+      <figure class="story-figure">
+        <img src="../assets/img/placeholder.svg" alt="TODO placeholder: motor bracket adapter plate" width="1200" height="800" loading="lazy">
+        <figcaption>The motor bracket adapter plate: a flat riser with four insert holes matching the OEM motor bracket's foot pattern.</figcaption>
+      </figure>
+
+      <div class="prose story">
+        <h3>Electronics</h3>
+        <p>A small printed tray next to (not behind) the motor mount carries the PWM controller on standoffs, with a panel-mount DC barrel jack, a remote speed potentiometer, and a rocker switch. Power comes from a 12V DC supply through the jack.</p>
+      </div>
+      <figure class="story-figure">
+        <img src="../assets/img/placeholder.svg" alt="TODO placeholder: electronics tray" width="1200" height="800" loading="lazy">
+        <figcaption>The electronics tray, with standoff posts for the speed controller board and panel cutouts for the power jack, speed pot, and switch.</figcaption>
+      </figure>
+
+      <div class="prose story">
+        <h3>Tools</h3>
+        <p>FDM printer (PETG throughout &mdash; chosen for the heat-set inserts and general toughness), digital calipers, a soldering iron for the heat-set inserts, a hex key set, and OpenSCAD for all the modeling.</p>
+        <h3>Process</h3>
+        <p>Measure the real hardware, model it, print, test-fit, and correct &mdash; repeatedly. Several dimensions (the coupling's bolt circle, the OEM bracket's hole spacing, the motor body diameter) started as estimates read off a product photo and were tightened to caliper measurements once the parts were in hand, with each correction scoped to just the part that needed it.</p>
+
+        <h2>Bill of materials</h2>
+        <p>Approximate &mdash; actual cost depends on what you already have on hand (printer, filament, hex keys, etc. assumed owned).</p>
+      </div>
+      <div class="table-wrap story">
+        <table>
+          <thead><tr><th scope="col">Item</th><th scope="col">Qty</th><th scope="col">Notes</th><th scope="col">Approx. cost</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">12V DC gearmotor kit (100 RPM, 6mm shaft) + PWM speed controller + flange coupling + OEM L-bracket + screws</th><td>1 kit</td><td>Sets the drive RPM; controller rated 6&ndash;30V / 6A, 16kHz PWM</td><td>$22</td></tr>
+            <tr><th scope="row">608ZZ ball bearings (22&times;8&times;7mm)</th><td>4</td><td>2 per roller shaft</td><td>$6</td></tr>
+            <tr><th scope="row">8mm precision steel rod, ~200&ndash;220mm</th><td>2</td><td>Roller shafts; trim to your printed pillow-block span</td><td>$8</td></tr>
+            <tr><th scope="row">PETG filament</th><td>~550g</td><td>Base (2 tiles), 2 roller cores, 4 pillow blocks, coupling adapter, motor bracket adapter, electronics tray</td><td>$11</td></tr>
+            <tr><th scope="row">Heat-set threaded inserts, brass, M3 &amp; M4</th><td>~16 pcs assorted</td><td>Pillow blocks, electronics standoffs, motor bracket adapter</td><td>$6</td></tr>
+            <tr><th scope="row">Socket-head cap screws, M3 &amp; M4, assorted lengths</th><td>~16 pcs</td><td>Board mounting, hold-downs, butt-joint</td><td>$6</td></tr>
+            <tr><th scope="row">Set/grub screws, M4&times;6 and M4&times;8</th><td>4</td><td>Lock rollers and coupling adapter to the shafts</td><td>$3</td></tr>
+            <tr><th scope="row">Buna-N (nitrile) O-ring cord, 1/8&quot; (3.175mm)</th><td>~0.5m</td><td>Roller grip surface; shared stock with a vacuum-chuck gasket</td><td>$5</td></tr>
+            <tr><th scope="row">Rubber-toughened CA glue (e.g. Loctite 414)</th><td>1 bottle</td><td>Splicing the cord loops</td><td>$8</td></tr>
+            <tr><th scope="row">Panel-mount DC barrel jack, 5.5&times;2.1mm</th><td>1</td><td>Power input</td><td>$2</td></tr>
+            <tr><th scope="row">Rocker switch</th><td>1</td><td>19.2&times;13.2mm cutout</td><td>$2</td></tr>
+            <tr><th scope="row">12V DC regulated power supply, ~3A (36W), 5.5&times;2.1mm plug</th><td>1</td><td>An old PC power supply's 12V rail works too, wired to the jack</td><td>$12</td></tr>
+            <tr><th scope="row">Hookup wire, spade/crimp connectors</th><td>&mdash;</td><td>Motor, switch, jack wiring</td><td>$4</td></tr>
+          </tbody>
+          <tfoot><tr><th scope="row">Total</th><td></td><td></td><td><strong>&asymp; $95</strong></td></tr></tfoot>
+        </table>
+      </div>
+      <div class="prose story">
         <h2>What I learned</h2>
-        <p class="todo">TODO: write-up from the owner.</p>
+        <p><strong>Spin direction isn't a detail &mdash; it's the whole mechanism.</strong> My first build's biggest flaw wasn't fit or finish, it was physics: a vertical-axis spinner can't fold material over itself the way a horizontal roller does, because gravity never changes direction relative to the jar. That one realization is what justified rebuilding the machine from scratch instead of just reprinting the old lid mount.</p>
+        <p><strong>Critical speed is a real design input, not a vibe.</strong> Roller RPM, jar diameter, and the drive surface diameter all combine into a single number &mdash; percentage of critical speed &mdash; and that number tells you whether you're set up for gentle blending (roughly 10&ndash;30% of critical) or aggressive milling (65&ndash;75%). Designing the roller/jar geometry around that target, instead of just "spin it and see," turned speed selection into a calculation instead of a guess.</p>
+        <p><strong>Design for printability before you design for geometry.</strong> My first pass used proud locating fences, which meant supports inside every pocket. Switching to recessed pockets (parts sit 2mm below the surrounding deck) let the whole base print face-down clean, with the only overhangs being the pocket floors themselves.</p>
+        <p><strong>Trust calipers over listing photos, but use the photos to get started.</strong> Several key dimensions &mdash; the coupling's bolt circle, the motor bracket's hole spacing &mdash; began as readings off a product photo, refined through trigonometry (bolt-circle diameter from adjacent-hole spacing: <code>spacing / sin(45&deg;)</code> for a 4-hole 90&deg;-spaced pattern) and cross-checked against the part's overall envelope before I ever touched calipers. That got me a printable first draft fast; the caliper measurements once the parts arrived are what made it actually fit.</p>
+        <p><strong>Let the real hardware win the argument with the CAD.</strong> I'd designed a custom motor faceplate mount before the motor kit arrived. Once I had the actual part in hand, the bracket it shipped with simply mounted better than anything I'd drawn &mdash; so I built an adapter for the OEM bracket instead of forcing my own design to work. Good parametric CAD should make that kind of pivot cheap, not painful.</p>
+        <p><strong>Small hardware collisions hide until you print them.</strong> Moving one bolt pattern to clear interference elsewhere silently walked a stiffening rib into the path of a slot it used to miss. Both fixes were one-line parameter changes once I actually measured the hole-to-hole distances &mdash; but neither was visible until the real print failed.</p>
+        <p><strong>Counterbore your set screws, don't just drill and tap.</strong> Early grub-screw holes assumed a standard screw length and ended up far too deep to reach the shaft. Adding a shallow counterbore around each set-screw hole let me use a much shorter screw (M4&times;6 and M4&times;8) while keeping full thread engagement &mdash; and it keeps the screw head below the surface.</p>
+        <p><strong>Shared consumables are free efficiency.</strong> Matching the roller grip cord to the O-ring stock I already buy for a vacuum chuck means one spool restocks two machines, and I only need to source and dial in one adhesive (rubber-toughened CA bonds Buna-N well) for splices on both.</p>
+        <p><strong>Scope every fix to the part that's actually broken.</strong> When a hole pattern collided, I changed only the hold-down bolt position and left every other dimension alone. When a rib collided with a slot, I gave that one base tile its own rib layout instead of touching the shared geometry other parts depend on. Nothing that had already printed successfully needed to be reprinted because of a later fix.</p>
       </div>
-      <h2>Photos</h2>
-      <div class="photo-set">
-        <figure><img src="../assets/img/placeholder.svg" alt="TODO: project photo 1" width="1200" height="800" loading="lazy"><figcaption>TODO: caption</figcaption></figure>
-        <figure><img src="../assets/img/placeholder.svg" alt="TODO: project photo 2" width="1200" height="800" loading="lazy"><figcaption>TODO: caption</figcaption></figure>
-        <figure><img src="../assets/img/placeholder.svg" alt="TODO: project photo 3" width="1200" height="800" loading="lazy"><figcaption>TODO: caption</figcaption></figure>
-      </div>
+      <p class="todo prose">TODO: photos of the printed and assembled unit. The images above are placeholders for CAD renders; real build photos will be added later.</p>
     </article>
   </main>
 
